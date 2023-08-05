@@ -49,7 +49,7 @@ function makeWeatherCards(data){
     let myStr = `
     <div class="top">
         <div class="temparature">${Math.round(data.main.temp)}°</div>
-        <div class="logo"><img src="${logo}" alt="weather-logo"></div>
+        <div class="logo"><img src="${logo}" ></div>
     </div>
     <div class="feels-like"> Feels like: ${Math.round(data.main.feels_like)}° </div>
     <div class="temp">
@@ -70,11 +70,11 @@ function selectLogo(data){
     let imageUrl = "";
     let desc = "";
     if(data.weather[0].main === "Clear" || data.weather[0].main === "Sunny"){
-        imageUrl = "images/icons8-sun-64.png";
+        imageUrl = "images/icons8-rain-64.png";
         desc = "Sunny";
     }
     else if(data.weather[0].main === "Storm" || Math.round(data.wind.speed) >= 15){
-        imageUrl = "images/icons8-wind-64.png";
+        imageUrl = "images/icons8-rain-64.png";
         desc = "Windy";
         
     }
@@ -84,11 +84,11 @@ function selectLogo(data){
         
     }
     else if(data.weather[0].main === "Haze" || data.weather[0].main === "Cloud" || Math.round(data.clouds) >= 65){
-        imageUrl = "images/icons8-clouds-64.png";
+        imageUrl = "images/icons8-rain-64.png";
         desc = "Cloudy";
     }
     else{
-        imageUrl = "images/icons8-partly-cloudy-day-64.png";
+        imageUrl = "images/icons8-rain-64.png";
         desc = "Partialy Cloudy";
 
     }
